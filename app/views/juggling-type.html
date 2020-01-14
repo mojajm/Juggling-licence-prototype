@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/juggling-trick">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-form-group">
+
+    <form class="form" action="/check-your-answers" method="post">
+  <fieldset class="govuk-fieldset">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+
+        <h1 class="govuk-fieldset__heading">
+        What do you juggle with?
+        </h1>
+      </legend>
+      <div class="govuk-radios">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="juggling-type" name="juggling-type" type="radio" value="Balls" {{ checked( "juggling-type", "Balls" ) }} >
+          <label class="govuk-label govuk-radios__label" for="juggling-type">
+         Balls
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="juggling-type" name="juggling-type" type="radio" value="Swords" {{ checked("juggling-type", "Swords") }} >
+          <label class="govuk-label govuk-radios__label" for="juggling-type">
+         Swords
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="juggling-type" name="juggling-type" type="radio" value="Chainsaws" {{ checked( "juggling-type", "Chainsaws" ) }} >
+          <label class="govuk-label govuk-radios__label" for="juggling-type">
+         Chainsaws
+          </label>
+        </div>
+
+        </div>
+
+<div>
+  <p></p>
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+</div>
+
+    </div>
+
+{% endblock %}
